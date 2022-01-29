@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+        name: app-knife
+spec:
+        containers:
+                - name: app-knife
+                  image: artifactory.raiffeisen.ru/container-training-docker/ctr-app-knife
+---
+apiVersion: v1
+kind: Pod
+metadata:
+        name: app-butter
+spec:
+        containers:
+                - name: app-butter
+                  image: artifactory.raiffeisen.ru/container-training-docker/ctr-app-butter

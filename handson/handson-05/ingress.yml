@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: app-knife-ingress
+  annotations:
+        kubernetes.io/ingress.class: <FIND APPROPRIATE INGRESS CLASS>
+spec:
+  rules:
+          - host: <RANDOM_NAME_WHAT__YOU_WANT>.<NAMESPACE>.lb.<CLUSTER_NAME>.k8s.raiffeisen.ru
+  backend:
+    serviceName: app-knife-service
+    servicePort: 8080

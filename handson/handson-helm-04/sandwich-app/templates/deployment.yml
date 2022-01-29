@@ -1,0 +1,46 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-knife-deployment
+  labels:
+    app: app-knife
+    {{- include "sandwich-app.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: app-knife
+  template:
+    metadata:
+      labels:
+        app: app-knife
+    spec:
+      containers:
+      - image: {{ printf "%s/ctr-app-knife" (.Values.image.repository | default "art") | quote }}
+        name: app
+        ports:
+        - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-butter-deployment
+  labels:
+    app: app-butter
+    {{- include "sandwich-app.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: app-butter
+  template:
+    metadata:
+      labels:
+        app: app-butter
+    spec:
+      containers:
+      - image: {{ .Values.image.repository }}/ctr-app-butter
+        name: app
+        ports:
+        - containerPort: 8080

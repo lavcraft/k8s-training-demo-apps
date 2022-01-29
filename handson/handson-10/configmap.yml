@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: training-configuration
+data:
+  CALL_TIMEOUT: "100"
+  CALL_HOST: "app-butter-service"
+  nginx.conf: |
+    {
+      http {
+        server {
+          server_name domain.com;
+        }
+      }
+    } 

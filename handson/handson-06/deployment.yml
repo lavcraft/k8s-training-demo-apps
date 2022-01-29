@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-knife-deployment
+  labels:
+    app: app-knife
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: app-knife
+  template:
+    #TODO

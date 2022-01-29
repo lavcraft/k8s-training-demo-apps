@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-knife-deployment
+  labels:
+    app: app-knife
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-knife
+  template:
+    metadata:
+      labels:
+        app: app-knife
+    spec:
+      volumes:
+      #todo add volume from PVC
+      containers:
+      - image: artifactory.raiffeisen.ru/container-training-docker/ctr-app-knife
+        name: app
+        volumeMounts:
+        # todo - map volume

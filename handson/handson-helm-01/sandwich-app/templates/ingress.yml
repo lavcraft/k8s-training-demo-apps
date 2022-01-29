@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: trainging-app-ingress
+spec:
+  rules:
+  - host: {{ .Values.ingress.host }}
+    http:
+      paths:
+      - backend:
+          serviceName: app-butter-service
+          servicePort: 8080
+        path: /butter/
+      - backend:
+          serviceName: app-knife-service
+          servicePort: 8080
+        path: /knife/
+

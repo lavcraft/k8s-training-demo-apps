@@ -1,0 +1,10 @@
+ apiVersion: v1
+ kind: Pod
+ metadata:
+        name: butter-fabric
+ spec:
+         containers:
+                 - name: app-knife
+                   image: artifactory.raiffeisen.ru/container-training-docker/ctr-app-knife
+                 - name: app-butter
+                   image: artifactory.raiffeisen.ru/container-training-docker/ctr-app-butter

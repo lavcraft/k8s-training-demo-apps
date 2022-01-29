@@ -1,0 +1,12 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-test
+spec:
+  template:
+    spec:
+      containers:
+        - name: test
+          image: artifactory.raiffeisen.ru/ext-techimage-docker/busybox
+          command: ["echo","Hello"]

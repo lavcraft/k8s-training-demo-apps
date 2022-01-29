@@ -1,0 +1,26 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+        name: app-knife
+        labels:
+            app: app-knife
+spec:
+        containers:
+                - name: app-knife
+                  image: artifactory.raiffeisen.ru/container-training-docker/ctr-app-knife
+                  ports:
+                          - containerPort: 8080
+---
+apiVersion: v1
+kind: Pod
+metadata:
+        name: app-butter
+        labels:
+            app: app-butter
+spec:
+        containers:
+                - name: app-butter
+                  image: artifactory.raiffeisen.ru/container-training-docker/ctr-app-butter
+                  ports:
+                          - containerPort: 8080
